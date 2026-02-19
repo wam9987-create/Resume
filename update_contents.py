@@ -4,7 +4,7 @@ from datetime import datetime
 OUTPUT = Path("contents.html")
 
 # 수집 대상: 레포 전체
-SEARCH_ROOT = Path(".")
+SEARCH_ROOT = Path("Resume")
 
 # 제외할 파일/경로 패턴
 EXCLUDE_NAMES = {"contents.html"}
