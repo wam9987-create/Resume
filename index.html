@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Munpark | Company</title>
+  <meta name="description" content="Munpark - 클라우드/DevOps/보안 기반 IT 서비스 기업 홈페이지" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#eaf1ff;
+      --muted:#a7b4d1;
+      --line:rgba(255,255,255,.10);
+      --accent:#4fd1c5;
+      --accent2:#7aa7ff;
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(79,209,197,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 20%, rgba(122,167,255,.18), transparent 55%),
+        radial-gradient(1200px 800px at 50% 95%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:22px 18px 80px}
+    .topbar{
+      position:sticky;top:14px;z-index:30;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(11,18,32,.65);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 0 0 5px rgba(79,209,197,.12);
+      flex:0 0 auto;
+    }
+    .brand b{letter-spacing:.2px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{
+      padding:8px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      border:1px solid transparent;
+    }
+    .nav a:hover{border-color:var(--line);color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:700;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border-color:transparent;
+      color:#06111a;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(15,27,51,.72);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{padding:26px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background: rgba(255,255,255,.04);
+      font-size:13px;
+    }
+    .pill i{
+      width:7px;height:7px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(79,209,197,.10);
+      display:inline-block;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:40px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+    .lead{margin:0 0 16px;color:var(--muted);max-width:62ch}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .hero-side{padding:18px}
+    .stat{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .stat .box{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .kpi{font-size:20px;font-weight:900}
+    .kpi small{font-size:12px;color:var(--muted);font-weight:700}
+    .muted{color:var(--muted)}
+    .section{margin-top:18px;padding:26px}
+    .section h2{margin:0 0 10px;font-size:22px}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    .feature{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .feature b{display:block;margin-bottom:6px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{
+      font-size:12px;color:var(--muted);
+      padding:6px 9px;border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.10);
+    }
+    .projects{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .proj{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .proj .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .meta .chip{
+      font-size:12px;color:var(--muted);
+      padding:6px 9px;border-radius:999px;
+      border:1px solid var(--line);
+    }
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .contact .box{
+      padding:16px;border-radius:16px;border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .form{
+      display:grid;gap:10px;margin-top:10px
+    }
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+      outline:none;
+    }
+    .input::placeholder{color: rgba(167,180,209,.75)}
+    .footer{
+      margin-top:18px;
+      padding:18px 10px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr}
+      .grid3{grid-template-columns: 1fr}
+      .projects{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          <b>Munpark</b><div class="muted" style="font-size:12px;margin-top:2px">Cloud · DevOps · Security</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="primary">
+        <a href="#about">회사소개</a>
+        <a href="#services">서비스</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#contact">문의</a>
+        <a class="btn primary" href="#contact">상담받기</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="card hero-main">
+        <div class="pill"><i></i> 안정적인 인프라 · 빠른 배포 · 보안 기본값</div>
+        <h1>비즈니스 성장을 위한<br/>클라우드 기반 IT 파트너</h1>
+        <p class="lead">
+          Munpark는 AWS/Kubernetes/Terraform 기반으로 인프라를 표준화하고,
+          운영 자동화와 보안 설정을 함께 설계해 장애와 비용을 줄입니다.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#services">서비스 보기</a>
+          <a class="btn" href="#projects">레퍼런스</a>
+          <a class="btn" href="#contact">문의하기</a>
+        </div>
+        <div class="tags" aria-label="stack" style="margin-top:16px">
+          <span class="tag">AWS</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">Monitoring</span>
+          <span class="tag">Security Baseline</span>
+        </div>
+      </section>
+
+      <aside class="card hero-side">
+        <div class="stat">
+          <div class="box">
+            <div class="kpi">99.9% <small>목표 가용성</small></div>
+            <div class="muted">운영 표준화 & 장애 대응 절차</div>
+          </div>
+          <div class="box">
+            <div class="kpi">-30% <small>예상 비용</small></div>
+            <div class="muted">리소스 최적화 & 관측성</div>
+          </div>
+          <div class="box">
+            <div class="kpi">IaC <small>기반</small></div>
+            <div class="muted">Terraform으로 재현 가능한 인프라</div>
+          </div>
+          <div class="box">
+            <div class="kpi">CI/CD <small>구축</small></div>
+            <div class="muted">배포 자동화로 리드타임 단축</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.12)">
+          <b>오늘의 운영 체크</b>
+          <div class="muted" style="margin-top:6px;font-size:13px">
+            • 배포 이력 / 에러율 / 응답시간<br/>
+            • 비용 급증 알림 설정<br/>
+            • 보안 그룹·IAM 최소권한 점검
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="about" class="card section">
+      <h2>회사소개</h2>
+      <p class="muted">
+        우리는 “잘 돌아가는 시스템”을 만드는 데서 끝나지 않고, 운영 가능한 형태로 표준화합니다.
+        인프라(클라우드), 배포(DevOps), 보안(Security)을 함께 설계해 실제 운영에서 발생하는 문제를 줄입니다.
+      </p>
+    </section>
+
+    <section id="services" class="card section">
+      <h2>서비스</h2>
+      <div class="grid3">
+        <div class="feature">
+          <b>클라우드 인프라 구축</b>
+          <div class="muted">VPC, IAM, 보안그룹, 로깅/모니터링까지 기본값부터 탄탄하게.</div>
+          <div class="tags">
+            <span class="tag">AWS</span><span class="tag">VPC</span><span class="tag">IAM</span>
+          </div>
+        </div>
+        <div class="feature">
+          <b>Kubernetes 운영</b>
+          <div class="muted">배포/스케일링/롤백, Ingress, 관측성(메트릭/로그)까지.</div>
+          <div class="tags">
+            <span class="tag">EKS</span><span class="tag">Ingress</span><span class="tag">Observability</span>
+          </div>
+        </div>
+        <div class="feature">
+          <b>자동화 & 보안</b>
+          <div class="muted">Terraform/IaC, CI/CD, 최소권한, 취약점 점검과 운영 가이드 제공.</div>
+          <div class="tags">
+            <span class="tag">Terraform</span><span class="tag">CI/CD</span><span class="tag">Security</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="card section">
+      <h2>프로젝트</h2>
+      <div class="projects">
+        <div class="proj">
+          <b>3-Tier 아키텍처 표준화</b>
+          <div class="muted">Nginx + App + DB 구조를 IaC로 재현, 운영 템플릿화.</div>
+          <div class="meta">
+            <span class="chip">Terraform</span>
+            <span class="chip">Nginx</span>
+            <span class="chip">MySQL</span>
+          </div>
+        </div>
+        <div class="proj">
+          <b>모니터링/알림 체계 구축</b>
+          <div class="muted">메트릭/로그 수집, 알림 기준 정리로 장애 대응 속도 개선.</div>
+          <div class="meta">
+            <span class="chip">Prometheus</span>
+            <span class="chip">Grafana</span>
+            <span class="chip">Alerting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card section">
+      <h2>문의</h2>
+      <div class="contact">
+        <div class="box">
+          <b>연락처</b>
+          <div class="muted" style="margin-top:8px">
+            Email: <span>contact@example.com</span><br/>
+            Phone: <span>010-0000-0000</span><br/>
+            Location: <span>Seoul, KR</span>
+          </div>
+          <div class="muted" style="margin-top:10px;font-size:13px">
+            * 실제 연락처로 바꿔서 사용해.
+          </div>
+        </div>
+        <div class="box">
+          <b>간단 문의</b>
+          <form class="form" onsubmit="event.preventDefault(); alert('문의가 접수되었습니다(데모).');">
+            <input class="input" placeholder="이름" required />
+            <input class="input" placeholder="이메일" type="email" required />
+            <input class="input" placeholder="문의 내용" required />
+            <button class="btn primary" type="submit">보내기</button>
+          </form>
+          <div class="muted" style="margin-top:10px;font-size:13px">
+            * 이 폼은 데모라 실제 전송은 안 됨. (원하면 SES/SMTP 연동 버전 만들어줄게)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="y"></span> Munpark. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
